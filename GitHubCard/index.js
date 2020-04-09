@@ -2,6 +2,13 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+// axios.get('https://api.github.com/users/')
+//   .then( response => {
+//     //
+//   })
+//   .catch( err => {
+
+//   })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -24,7 +31,13 @@
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+  'tetondan',
+  'dustinmyers',
+  'justsml',
+  'luishrd',
+  'bigknell'
+];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -45,6 +58,52 @@ const followersArray = [];
 </div>
 
 */
+
+// grab parent element div.cards
+const cards = document.querySelector('.cards')
+
+function addTLs({object}) {
+  // Instantiate elements for cards
+  const cardDiv = document.createElement('div')
+  const imageElement = document.createElement('img')
+  const infoDiv = document.createElement('div')
+  const h3Element = document.createElement('h3')
+  const usernameElement = document.createElement('p')
+  const locationElement = document.createElement('p')
+  const profileElement = document.createElement('p')
+  const anchorElement = document.createElement('a')
+  const followersElement = document.createElement('p')
+  const followingElement = document.createElement('p')
+  const bioElement = document.createElement('p')
+
+  // Setup up structure of elements
+  cardDiv.appendChild(imageElement)
+  cardDiv.appendChild(infoDiv)
+  infoDiv.appendChild(h3Element)
+  infoDiv.appendChild(usernameElement)
+  infoDiv.appendChild(locationElement)
+  infoDiv.appendChild(profileElement)
+  infoDiv.appendChild(anchorElement)
+  infoDiv.appendChild(followersElement)
+  infoDiv.appendChild(followingElement)
+  infoDiv.appendChild(bioElement)
+
+
+  // Add classes to elements
+  cardDiv.classList.add('card')
+  infoDiv.classList.add('card-info')
+  h3Element.classList.add('name')
+  usernameElement.classList.add('username')
+
+  
+  // Set text content
+  
+  
+  return null
+}
+
+// uncomment invokation when debugging
+// addTLs({})  
 
 /* List of LS Instructors Github username's: 
   tetondan
